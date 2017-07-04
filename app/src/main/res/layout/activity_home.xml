@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.luis.tassel.Home">
+
+    <!--Main Container-->
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#08511a">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/floatingActionButton4"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/floatingActionButton4"
+                android:clickable="true"
+                android:visibility="invisible"
+                app:backgroundTint="@color/colorPrimary"
+                app:elevation="8dp"
+                app:fabSize="mini"
+                app:rippleColor="@color/colorAccent"
+                app:srcCompat="@drawable/comments" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/floatingActionButton3"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/floatingActionButton3"
+                android:clickable="true"
+                android:visibility="invisible"
+                app:backgroundTint="@color/colorPrimary"
+                app:elevation="8dp"
+                app:fabSize="mini"
+                app:rippleColor="@color/colorAccent"
+                app:srcCompat="@drawable/instagram" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/floatingActionButton2"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/floatingActionButton2"
+                android:clickable="true"
+                android:visibility="invisible"
+                app:backgroundTint="@color/colorPrimary"
+                app:elevation="8dp"
+                app:fabSize="mini"
+                app:rippleColor="@color/colorAccent"
+                app:srcCompat="@drawable/twitter" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/floatingActionButton"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/floatingActionButton"
+                android:clickable="true"
+                android:visibility="invisible"
+                app:backgroundTint="@color/colorPrimary"
+                app:elevation="8dp"
+                app:fabSize="mini"
+                app:rippleColor="@color/colorAccent"
+                app:srcCompat="@drawable/facebook" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="false"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:clickable="true"
+                app:backgroundTint="@color/colorPrimary"
+                app:elevation="8dp"
+                app:fabSize="mini"
+                app:rippleColor="@color/colorAccent"
+                app:srcCompat="@drawable/plus" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/cardView3"
+            android:layout_alignLeft="@+id/cardView2"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentRight="false"
+            android:layout_alignRight="@+id/cardView2"
+            android:layout_below="@+id/cardView2"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/contact"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:translationZ="2dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:background="@color/colorBackgroundSecondary"
+                    android:translationZ="1dp">
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/contactbackground"
+                    android:translationZ="0dp" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:alpha="1"
+                    android:text="@string/menu"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:translationZ="2dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.4"
+                    android:background="@color/colorBackgroundSecondary"
+                    android:translationZ="1dp">
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@mipmap/menubackground" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView2"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/cardView"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@+id/cardView3"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/gallery"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:translationZ="2dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:background="@color/colorBackgroundSecondary"
+                    android:translationZ="1dp">
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/gallerybackground"
+                    android:translationZ="0dp" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cardView3"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/relativeLayout2"
+            android:layout_alignLeft="@+id/cardView"
+            android:layout_alignTop="@+id/cardView2"
+            android:layout_below="@+id/cardView"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="8dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/today_special"
+                    android:textColor="@color/colorTextPrimary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:translationZ="2dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:background="@color/colorBackgroundSecondary"
+                    android:translationZ="1dp">
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/specialbackground"
+                    android:translationZ="0dp" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+
+    <!--Burguer Menu Content-->
+
+    <RelativeLayout
+        android:layout_width="280dp"
+        android:layout_height="match_parent"
+        android:id="@+id/drawerPane"
+        android:layout_gravity="start"
+        >
+
+        <!-- Profile Box -->
+
+        <!-- List of Actions (pages) -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ListView
+                    android:id="@+id/navList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorBackgroundSecondary"
+                    android:choiceMode="singleChoice"
+                    android:divider="@color/colorPrimary"
+                    android:dividerHeight="1dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</android.support.v4.widget.DrawerLayout>

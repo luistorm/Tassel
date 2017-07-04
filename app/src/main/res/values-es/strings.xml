@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Tassel</string>
+    <string name="menu">Menú</string>
+    <string name="gallery">Galería</string>
+    <string name="contact">Contacto</string>
+    <string name="comments">Comentarios</string>
+    <string name="today_special">Plato del Día</string>
+    <string name="drawer_open">Abierto</string>
+    <string name="drawer_close">Cerrado</string>
+    <string name="price">Precio:</string>
+    <string name="ingredients">Ingredientes:</string>
+</resources>
