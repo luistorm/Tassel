@@ -2,6 +2,7 @@ package com.example.luis.tassel;
 
 import android.content.Context;
 import android.content.Intent;
+import android.service.voice.VoiceInteractionSession;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -33,6 +34,12 @@ public class MenuHome extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
         final Context context = this;
         final List items = new ArrayList();
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+
+        lManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
+        recyclerView.setLayoutManager(lManager);
+
         String url = utilities.serverAddress+"/controllers/imageController.php?action=GetAll";
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
@@ -69,11 +76,49 @@ public class MenuHome extends AppCompatActivity {
                                             }
                                         }
                                         utilities.products = Aux;
+                                        String url3;
                                         for (int i = 0; i < utilities.products.length; i++) {
                                             items.add(utilities.products[i]);
+                                            adapter = new productAdapter(items);
+                                            recyclerView.setAdapter(adapter);
+                                            recyclerView.refreshDrawableState();
+                                            url3 = utilities.serverAddress+"/controllers/ingredientController.php?" +
+                                                    "action=GetIngredients"+"&productId="
+                                                    +Integer.toString(utilities.products[i].getId());
+                                            StringRequest stringRequest3 = new StringRequest(Request.Method.GET, url3,
+                                                    new Response.Listener<String>() {
+                                                @Override
+                                                public void onResponse(String response) {
+                                                    if (response.compareTo("Something is wrong with the ingredients query") != 0) {
+                                                        String[] tokens = response.split(":");
+                                                        String[] ingredients = tokens[1].split(";");
+                                                        String s = "";
+                                                        for (int j = 0; j < ingredients.length; j++) {
+                                                            s+= ingredients[j];
+                                                            if(j!= ingredients.length - 1)
+                                                                s+=", ";
+                                                        }
+                                                        for (int j = 0; j < utilities.products.length; j++) {
+                                                            if(Integer.parseInt(tokens[0]) == utilities.products[j].getId()){
+                                                                ((product)items.get(j)).setIngredients(s);
+                                                                adapter = new productAdapter(items);
+                                                                recyclerView.setAdapter(adapter);
+                                                                recyclerView.refreshDrawableState();
+                                                                break;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                                    , new Response.ErrorListener() {
+                                                @Override
+                                                public void onErrorResponse(VolleyError error) {
+                                                    Toast.makeText(context, "Error: \n" + error.toString(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+                                            requestQueue.add(stringRequest3);
                                         }
-                                        adapter = new productAdapter(items);
-                                        recyclerView.setAdapter(adapter);
+
                                     }
                                 }
                             }, new Response.ErrorListener() {
@@ -95,11 +140,7 @@ public class MenuHome extends AppCompatActivity {
         });
         requestQueue.add(stringRequest);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
 
-        lManager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false);
-        recyclerView.setLayoutManager(lManager);
 
 
     }

@@ -5,7 +5,7 @@ package com.example.luis.tassel;
  */
 
 public class utilities {
-    public static final String serverAddress = "http://192.168.1.16/tassel";
+    public static final String serverAddress = "http://192.168.0.113/tassel";
     public static image[] images = null;
     public static  product[] products = null;
 }

@@ -10,6 +10,7 @@ public class product {
     private float price;
     private String description;
     private String imagePath;
+    private String ingredients;
 
     public product(int id, String name, float price, String description) {
         this.id = id;
@@ -17,6 +18,15 @@ public class product {
         this.price = price;
         this.description = description;
         imagePath = null;
+        ingredients = null;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
     }
 
     public String getImagePath() {

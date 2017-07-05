@@ -65,6 +65,7 @@ public class productAdapter extends RecyclerView.Adapter<productAdapter.productV
         viewHolder.nIV.setImageUrl(utilities.serverAddress+items.get(i).getImagePath(),imageLoader);
         viewHolder.name.setText(items.get(i).getName());
         viewHolder.price.setText(Float.toString(items.get(i).getPrice()));
+        viewHolder.ingredients.setText(items.get(i).getIngredients());
         viewHolder.description.setText("\""+items.get(i).getDescription()+"\"");
     }
 }
