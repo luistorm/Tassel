@@ -31,7 +31,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
     private TextView tV,tV2,tV3,tV4;
     private FloatingActionButton fab,fab2,fab3,fab4,fab5;
     private boolean fabVal;
-    private CardView cV;
+    private CardView cV,cV2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +110,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
 
         cV = (CardView) findViewById(R.id.cardView);
         cV.setOnClickListener(this);
+        cV2 = (CardView) findViewById(R.id.cardView3);
+        cV2.setOnClickListener(this);
     }
 
     @Override
@@ -264,6 +266,10 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
         }
         if(cV.getId() == view.getId()) {
             Intent intent = new Intent(this,MenuHome.class);
+            startActivity(intent);
+        }
+        if(cV2.getId() == view.getId()) {
+            Intent intent = new Intent(this,Special.class);
             startActivity(intent);
         }
     }

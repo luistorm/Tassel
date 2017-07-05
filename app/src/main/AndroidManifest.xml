@@ -27,7 +27,10 @@
         <activity
             android:name=".WebNavigation"
             android:theme="@style/NoActionBar" />
-        <activity android:name=".MenuHome" android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".MenuHome"
+            android:screenOrientation="portrait" />
+        <activity android:name=".Special" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

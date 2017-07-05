@@ -7,4 +7,6 @@
     <color name="colorBackgroundSecondary">#d3ece8</color>
     <color name="colorTextPrimary">#000000</color>
     <color name="colorBackground3">#ad7a41</color>
+    <color name="gradient_start">#49b771</color>
+    <color name="gradient_end">#227741</color>
 </resources>

@@ -11,14 +11,24 @@ public class product {
     private String description;
     private String imagePath;
     private String ingredients;
+    private int special;
 
-    public product(int id, String name, float price, String description) {
+    public product(int id, String name, float price, String description, int special) {
         this.id = id;
         this.name = name;
         this.price = price;
         this.description = description;
         imagePath = null;
         ingredients = null;
+        this.special = special;
+    }
+
+    public int getSpecial() {
+        return special;
+    }
+
+    public void setSpecial(int special) {
+        this.special = special;
     }
 
     public String getIngredients() {
