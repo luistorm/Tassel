@@ -67,5 +67,7 @@ public class productAdapter extends RecyclerView.Adapter<productAdapter.productV
         viewHolder.price.setText(Float.toString(items.get(i).getPrice()));
         viewHolder.ingredients.setText(items.get(i).getIngredients());
         viewHolder.description.setText("\""+items.get(i).getDescription()+"\"");
+        if(items.get(i).getSpecial() == 1)
+            viewHolder.price.setTextColor(context.getResources().getColor(R.color.colorPrimaryDark));
     }
 }

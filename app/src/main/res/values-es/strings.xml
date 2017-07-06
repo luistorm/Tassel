@@ -9,4 +9,10 @@
     <string name="drawer_close">Cerrado</string>
     <string name="price">Precio:</string>
     <string name="ingredients">Ingredientes:</string>
+    <string name="loading">Cargando...</string>
+    <string name="where">¿Donde estamos?</string>
+    <string name="schedule">Horario:</string>
+    <string name="phone">Teléfono:</string>
+    <string name="address">Carrera 11 con Calle 67-61\nZona Chapinero 11001000 Bogotá</string>
+    <string name="number">+57 319 2614289</string>
 </resources>

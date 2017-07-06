@@ -160,6 +160,9 @@ public class MenuHome extends AppCompatActivity {
                                                             }
                                                         }
                                                     }
+                                                    else{
+                                                        Toast.makeText(context, response, Toast.LENGTH_SHORT).show();
+                                                    }
                                                 }
                                             }
                                                     , new Response.ErrorListener() {
@@ -172,6 +175,9 @@ public class MenuHome extends AppCompatActivity {
                                         }
 
                                     }
+                                    else{
+                                        Toast.makeText(context, response, Toast.LENGTH_SHORT).show();
+                                    }
                                 }
                             }, new Response.ErrorListener() {
                                 @Override
@@ -180,6 +186,9 @@ public class MenuHome extends AppCompatActivity {
                                 }
                             });
                             requestQueue.add(stringRequest2);
+                        }
+                        else{
+                            Toast.makeText(context, response, Toast.LENGTH_SHORT).show();
                         }
                     }
                 }

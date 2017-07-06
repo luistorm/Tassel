@@ -37,7 +37,7 @@
                         android:layout_below="@+id/textView9"
                         android:layout_marginBottom="15dp"
                         android:layout_marginTop="10dp"
-                        android:text='"Exquisitos Pancakes con queso, miel y mantequilla"'
+                        android:text="@string/loading"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="16sp"
                         android:textStyle="italic" />
@@ -50,7 +50,7 @@
                         android:layout_alignRight="@+id/textView5"
                         android:layout_below="@+id/textView8"
                         android:layout_marginTop="5dp"
-                        android:text="Harina de trigo, queso, miel, mantequilla"
+                        android:text="@string/loading"
                         android:textColor="@color/colorTextPrimary"
                         android:textSize="16sp" />
 
@@ -71,7 +71,7 @@
                         android:layout_alignTop="@+id/textView6"
                         android:layout_marginLeft="10dp"
                         android:layout_toRightOf="@+id/textView6"
-                        android:text="6000"
+                        android:text="@string/loading"
                         android:textColor="@color/colorBackgroundPrimary"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -95,7 +95,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
                         android:layout_marginTop="15dp"
-                        android:text="Pancakes con queso, miel y mantequilla"
+                        android:text="@string/loading"
                         android:textColor="@color/colorTextPrimary"
                         android:textSize="18sp"
                         android:textStyle="bold|italic" />
