@@ -13,9 +13,7 @@ import android.widget.RelativeLayout;
 import java.util.ArrayList;
 
 public class Contact extends AppCompatActivity {
-    /*
-    * carrera 11 con calle 67-61 Zona Chapinero 11001000 Bogotá
-    * */
+
     private ListView mDrawerList;
     private RelativeLayout mDrawerPane;
     private ActionBarDrawerToggle mDrawerToggle;

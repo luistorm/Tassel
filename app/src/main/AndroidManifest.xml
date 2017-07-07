@@ -33,8 +33,8 @@
         <activity
             android:name=".Special"
             android:screenOrientation="portrait" />
-        <activity android:name=".Contact" />
-        <activity android:name=".Gallery"></activity>
+        <activity android:name=".Contact" android:screenOrientation="portrait"/>
+        <activity android:name=".Gallery" android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

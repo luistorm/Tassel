@@ -1,11 +1,13 @@
 package com.example.luis.tassel;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
@@ -51,9 +53,15 @@ public class imageAdapter extends RecyclerView.Adapter<imageAdapter.imageViewHol
     }
 
     @Override
-    public void onBindViewHolder(imageAdapter.imageViewHolder viewHolder, int i) {
+    public void onBindViewHolder(imageAdapter.imageViewHolder viewHolder, final int i) {
         ImageLoader.ImageCache imageCache = new BitmapLruCache();
         ImageLoader imageLoader = new ImageLoader(Volley.newRequestQueue(context), imageCache);
         viewHolder.nIV.setImageUrl(utilities.serverAddress + items.get(i).getPath(), imageLoader);
+        viewHolder.nIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new imageDialog((Activity) context,items.get(i).getPath()).show();
+            }
+        });
     }
 }
