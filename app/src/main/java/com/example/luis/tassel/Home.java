@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.animation.BounceInterpolator;
 import android.view.animation.ScaleAnimation;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -32,6 +33,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
     private FloatingActionButton fab,fab2,fab3,fab4,fab5;
     private boolean fabVal;
     private CardView cV,cV2,cV3,cV4;
+    private ImageView iV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +118,9 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
         cV3.setOnClickListener(this);
         cV4 = (CardView) findViewById(R.id.cardView2);
         cV4.setOnClickListener(this);
+
+        iV = (ImageView) findViewById(R.id.imageView17);
+        iV.setOnClickListener(this);
     }
 
     @Override
@@ -143,7 +148,29 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
     * is selected.
     * */
     private void selectItemFromDrawer(int position) {
-
+        Intent intent;
+        switch (position) {
+            case 0:
+                intent = new Intent(this,MenuHome.class);
+                startActivity(intent);
+                break;
+            case 1:
+                intent = new Intent(this, Special.class);
+                startActivity(intent);
+                break;
+            case 2:
+                intent = new Intent(this, Gallery.class);
+                startActivity(intent);
+                break;
+            case 3:
+                intent = new Intent(this, Contact.class);
+                startActivity(intent);
+                break;
+            case 4:
+                intent = new Intent(this, Comments.class);
+                startActivity(intent);
+                break;
+        }
         // Close the drawer
         mDrawerLayout.closeDrawer(mDrawerPane);
     }
@@ -282,6 +309,14 @@ public class Home extends AppCompatActivity implements View.OnClickListener{
         }
         if(cV4.getId() == view.getId()) {
             Intent intent = new Intent(this,Gallery.class);
+            startActivity(intent);
+        }
+        if(fab5.getId() == view.getId()) {
+            Intent intent = new Intent(this,Comments.class);
+            startActivity(intent);
+        }
+        if(iV.getId() == view.getId()) {
+            Intent intent = new Intent(this,Home.class);
             startActivity(intent);
         }
     }

@@ -15,4 +15,8 @@
     <string name="phone">Phone:</string>
     <string name="address">Carrera 11 con Calle 67-61\nZona Chapinero 11001000 Bogotá</string>
     <string name="number">+57 319 2614289</string>
+    <string name="name">Name</string>
+    <string name="comment">Comment</string>
+    <string name="opinion">Thanks for your opinion!</string>
+    <string name="opinion_error">Something went wrong, please try again</string>
 </resources>

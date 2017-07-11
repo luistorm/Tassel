@@ -1,6 +1,7 @@
 package com.example.luis.tassel;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -25,7 +27,7 @@ import com.android.volley.toolbox.Volley;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Gallery extends AppCompatActivity {
+public class Gallery extends AppCompatActivity implements View.OnClickListener{
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -36,6 +38,7 @@ public class Gallery extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private ArrayList<NavItem> mNavItems = new ArrayList<NavItem>();
+    private ImageView iV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +48,7 @@ public class Gallery extends AppCompatActivity {
         final Context context = this;
         final List items = new ArrayList();
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView2);
-        recyclerView.addItemDecoration(new SpaceItemDecoration(15));
+        recyclerView.addItemDecoration(new SpaceItemDecoration(20));
         recyclerView.setHasFixedSize(true);
 
         lManager = new GridLayoutManager(this,2);
@@ -117,6 +120,8 @@ public class Gallery extends AppCompatActivity {
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+        iV = (ImageView) findViewById(R.id.imageView20);
+        iV.setOnClickListener(this);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -143,8 +148,38 @@ public class Gallery extends AppCompatActivity {
     * is selected.
     * */
     private void selectItemFromDrawer(int position) {
-
+        Intent intent;
+        switch (position) {
+            case 0:
+                intent = new Intent(this,MenuHome.class);
+                startActivity(intent);
+                break;
+            case 1:
+                intent = new Intent(this, Special.class);
+                startActivity(intent);
+                break;
+            case 2:
+                intent = new Intent(this, Gallery.class);
+                startActivity(intent);
+                break;
+            case 3:
+                intent = new Intent(this, Contact.class);
+                startActivity(intent);
+                break;
+            case 4:
+                intent = new Intent(this, Comments.class);
+                startActivity(intent);
+                break;
+        }
         // Close the drawer
         mDrawerLayout.closeDrawer(mDrawerPane);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(iV.getId() == view.getId()) {
+            Intent intent = new Intent(this,Home.class);
+            startActivity(intent);
+        }
     }
 }

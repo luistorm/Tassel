@@ -13,6 +13,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
@@ -27,7 +28,7 @@ import com.android.volley.toolbox.Volley;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MenuHome extends AppCompatActivity {
+public class MenuHome extends AppCompatActivity implements View.OnClickListener{
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -38,6 +39,7 @@ public class MenuHome extends AppCompatActivity {
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private ArrayList<NavItem> mNavItems = new ArrayList<NavItem>();
+    private ImageView iV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -200,6 +202,8 @@ public class MenuHome extends AppCompatActivity {
             }
         });
         requestQueue.add(stringRequest);
+        iV = (ImageView) findViewById(R.id.imageView18);
+        iV.setOnClickListener(this);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -226,8 +230,38 @@ public class MenuHome extends AppCompatActivity {
     * is selected.
     * */
     private void selectItemFromDrawer(int position) {
-
+        Intent intent;
+        switch (position) {
+            case 0:
+                intent = new Intent(this,MenuHome.class);
+                startActivity(intent);
+                break;
+            case 1:
+                intent = new Intent(this, Special.class);
+                startActivity(intent);
+                break;
+            case 2:
+                intent = new Intent(this, Gallery.class);
+                startActivity(intent);
+                break;
+            case 3:
+                intent = new Intent(this, Contact.class);
+                startActivity(intent);
+                break;
+            case 4:
+                intent = new Intent(this, Comments.class);
+                startActivity(intent);
+                break;
+        }
         // Close the drawer
         mDrawerLayout.closeDrawer(mDrawerPane);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(iV.getId() == view.getId()) {
+            Intent intent = new Intent(this,Home.class);
+            startActivity(intent);
+        }
     }
 }

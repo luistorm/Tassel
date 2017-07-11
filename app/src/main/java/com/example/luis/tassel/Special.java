@@ -1,13 +1,16 @@
 package com.example.luis.tassel;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -17,14 +20,21 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import java.util.ArrayList;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public class Special extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Special extends AppCompatActivity implements View.OnClickListener{
 
     private ListView mDrawerList;
     private RelativeLayout mDrawerPane;
@@ -34,6 +44,7 @@ public class Special extends AppCompatActivity {
     private RequestQueue requestQueue;
     private TextView tV,tV2,tV3,tV4;
     private NetworkImageView nIV;
+    private ImageView iV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -147,6 +158,8 @@ public class Special extends AppCompatActivity {
             }
         });
         requestQueue.add(stringRequest);
+        iV = (ImageView) findViewById(R.id.imageView19);
+        iV.setOnClickListener(this);
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -173,8 +186,38 @@ public class Special extends AppCompatActivity {
     * is selected.
     * */
     private void selectItemFromDrawer(int position) {
-
+        Intent intent;
+        switch (position) {
+            case 0:
+                intent = new Intent(this,MenuHome.class);
+                startActivity(intent);
+                break;
+            case 1:
+                intent = new Intent(this, Special.class);
+                startActivity(intent);
+                break;
+            case 2:
+                intent = new Intent(this, Gallery.class);
+                startActivity(intent);
+                break;
+            case 3:
+                intent = new Intent(this, Contact.class);
+                startActivity(intent);
+                break;
+            case 4:
+                intent = new Intent(this, Comments.class);
+                startActivity(intent);
+                break;
+        }
         // Close the drawer
         mDrawerLayout.closeDrawer(mDrawerPane);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(iV.getId() == view.getId()) {
+            Intent intent = new Intent(this,Home.class);
+            startActivity(intent);
+        }
     }
 }
