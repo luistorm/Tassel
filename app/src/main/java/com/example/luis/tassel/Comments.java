@@ -54,7 +54,6 @@ public class Comments extends AppCompatActivity implements View.OnClickListener{
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager lManager;
-    private CardView cV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,7 +110,6 @@ public class Comments extends AppCompatActivity implements View.OnClickListener{
         iV3 = (ImageView) findViewById(R.id.imageView14);
         iV4 = (ImageView) findViewById(R.id.imageView15);
         iV5 = (ImageView) findViewById(R.id.imageView16);
-        cV = (CardView) findViewById(R.id.cardComment);
         try
         {
             File databaseFile = getDatabasePath(utilities.dbFilename);
